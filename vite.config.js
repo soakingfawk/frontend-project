@@ -1,16 +1,8 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
-  base: '/frontend-project/',
+  base: '/frontend-project/', // ⚠️ ЗАМЕНИТЕ на название ВАШЕГО репозитория!
   build: {
-    emptyOutDir: true,
-    modulePreload: { polyfill: false },
-    rollupOptions: {
-      input: {
-        index: resolve(fileURLToPath(new URL('.', import.meta.url)), 'index.html'),
-      },
-    },
+    outDir: 'dist',
   },
 });
